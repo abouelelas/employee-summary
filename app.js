@@ -13,7 +13,7 @@ const teamMembers = [];
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 function createTeam() {
-   return inquirer
+    inquirer
         .prompt([
 
             {
@@ -28,7 +28,7 @@ function createTeam() {
 
                 ]
             }
-            
+
         ]).then(userChoice => {
             switch (userChoice.memberChoice) {
                 case "Manager":
@@ -41,6 +41,10 @@ function createTeam() {
                     return addIntern();
                     break;
                 case "No more employees":
+                    let html = render(teamMembers);
+                    fs.writeFile("team.html", html, 'utf8', () => {
+                        console.log("Finished")
+                    });
                     break
             }
         })
@@ -78,7 +82,7 @@ function createTeam() {
 
                 teamMembers.push(manager)
 
-               createTeam();
+                createTeam();
 
             })
     }
@@ -116,12 +120,12 @@ function createTeam() {
 
                 teamMembers.push(engineer)
 
-              createTeam();
+                createTeam();
 
             })
     }
     function addIntern() {
-       inquirer
+        inquirer
             .prompt([
                 {
                     type: "input",
@@ -154,22 +158,21 @@ function createTeam() {
 
                 teamMembers.push(intern)
 
-               return createTeam();
+                return createTeam();
 
             })
     }
 
+
 }
-
-createTeam()
-    .then(() => {
-        let html = render(teamMembers);
-        fs.writeFile("team.html", html, 'utf8', () => {
-            console.log("Finished")
-        });
-
-    })
-module.exports = teamMembers
+    createTeam()
+    // {
+    //     let html = render(teamMembers);
+    //     fs.writeFile("team.html", html, 'utf8', () => {
+    //         console.log("Finished")
+    //     });
+    // }
+    module.exports = teamMembers
 
 // createTeam.push(new Manager(inquirer));
 // createTeam.push(new Engineer(inquirer));
