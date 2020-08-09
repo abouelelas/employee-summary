@@ -6,19 +6,19 @@ const path = require("path");
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+const outputPath = path.join(OUTPUT_DIR, "./output/team.html");
 
 const render = require("./lib/htmlRenderer");
 const teamMembers = [];
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 function createTeam() {
-    inquirer
+   inquirer
         .prompt([
 
             {
                 type: "list",
-                name: "memberchoice",
+                name: "memberChoice",
                 message: "What type of team member are you?",
                 choices: [
                     "Manager",
@@ -41,15 +41,11 @@ function createTeam() {
                     return addIntern();
                     break;
                 case "No more employees":
-                    let html = render(teamMembers);
-                    fs.writeFile("team.html", html, 'utf8', () => {
-                        console.log("Finished")
-                    });
                     break
             }
         })
     function addManager() {
-        inquirer
+       return  inquirer
             .prompt([
                 {
                     type: "input",
@@ -82,12 +78,12 @@ function createTeam() {
 
                 teamMembers.push(manager)
 
-                createTeam();
+             return   createTeam();
 
             })
     }
     function addEngineer() {
-        inquirer
+       return inquirer
             .prompt([
                 {
                     type: "input",
@@ -120,12 +116,12 @@ function createTeam() {
 
                 teamMembers.push(engineer)
 
-                createTeam();
+                return createTeam();
 
             })
     }
     function addIntern() {
-        inquirer
+       return inquirer
             .prompt([
                 {
                     type: "input",
@@ -161,24 +157,19 @@ function createTeam() {
                 return createTeam();
 
             })
+        }
     }
-
-
-}
+   
     createTeam()
-    // {
-    //     let html = render(teamMembers);
-    //     fs.writeFile("team.html", html, 'utf8', () => {
-    //         console.log("Finished")
-    //     });
-    // }
+    // .then(() => {
+        {
+        let html = render(teamMembers);
+        fs.writeFile("./output/team.html", html, 'utf8', () => {
+          console.log("Finished")
+        });
+    }     
     module.exports = teamMembers
-
-// createTeam.push(new Manager(inquirer));
-// createTeam.push(new Engineer(inquirer));
-// createTeam.push(new Intern(inquirer));
-// 3 separate functions for these 3 prompts
-
+    
 
 
 // After the user has input all employees desired, call the `render` function (required
