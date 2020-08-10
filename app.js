@@ -6,7 +6,7 @@ const path = require("path");
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "./output/team.html");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 const teamMembers = [];
@@ -24,7 +24,7 @@ function createTeam() {
                     "Manager",
                     "Engineer",
                     "Intern",
-                    "No members to add"
+                    "No more employees to add" 
 
                 ]
             }
@@ -40,8 +40,11 @@ function createTeam() {
                 case "Intern":
                     return addIntern();
                     break;
-                case "No more employees":
-                    break
+                case "No more employees to add":
+                    // call renderTeam
+                    renderTeam()
+                    break;
+                default: console.log("ERROR WITH THE OPTIONS")
             }
         })
     function addManager() {
@@ -78,7 +81,7 @@ function createTeam() {
 
                 teamMembers.push(manager)
 
-             return   createTeam();
+                createTeam();
 
             })
     }
@@ -116,7 +119,7 @@ function createTeam() {
 
                 teamMembers.push(engineer)
 
-                return createTeam();
+                 createTeam();
 
             })
     }
@@ -154,7 +157,7 @@ function createTeam() {
 
                 teamMembers.push(intern)
 
-                return createTeam();
+                 createTeam();
 
             })
         }
@@ -162,12 +165,15 @@ function createTeam() {
    
     createTeam()
     // .then(() => {
-        {
+
+    function renderTeam(){
+        console.log(teamMembers);
         let html = render(teamMembers);
-        fs.writeFile("./output/team.html", html, 'utf8', () => {
+        fs.writeFile("team.html", html, 'utf8', () => {
           console.log("Finished")
         });
-    }     
+    }  
+
     module.exports = teamMembers
     
 

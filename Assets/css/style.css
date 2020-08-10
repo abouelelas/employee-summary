@@ -1,6 +1,6 @@
 body {
     font-family: 'lucida sans', serif;
-    background-color: rgb(124, 170, 187)69);
+    background-color: lightsteelblue;
 }
 
 h1 {
@@ -8,7 +8,7 @@ h1 {
 }
 
 .team-heading {
-    background-color: lightcyan;
+    background-color:rgb(201, 215, 228);
 }
 .employee-card {
     margin: 30px;
@@ -17,5 +17,5 @@ h1 {
 }
 
 .card-header {
-    background-color: darkcyan;
+    background-color:lightyellow;
 }
