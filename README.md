@@ -21,9 +21,9 @@ How do you deliver this? Here are some guidelines:
 
 * Below is an example of what the application looks like. 
 
-* ![Employee Summary 1)(./assets/employee-ss.png)
-* ![Employee Summary 2](./assets/Employee-SummarySS2.png)
-* ![Employee Summary 3](./assets/Employee-SummarySS-test-run.png)
+![EmployeeSummary 1](./assets/employee-ss.png)
+![EmployeeSummary 2](./assets/Employee-SummarySS2.png)
+![EmployeeSummary 3](./assets/Employee-SummarySS-test-run.png)
 
 
 The project will prompt the user to build an engineering team. An engineering
