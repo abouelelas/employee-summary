@@ -6,14 +6,14 @@ const path = require("path");
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+const outputPath = path.join(OUTPUT_DIR, "./output/team.html");
 
 const render = require("./lib/htmlRenderer");
 const teamMembers = [];
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 function createTeam() {
-   inquirer
+    inquirer
         .prompt([
 
             {
@@ -24,7 +24,7 @@ function createTeam() {
                     "Manager",
                     "Engineer",
                     "Intern",
-                    "No more employees to add" 
+                    "No more employees to add"
 
                 ]
             }
@@ -48,7 +48,7 @@ function createTeam() {
             }
         })
     function addManager() {
-       return  inquirer
+        return inquirer
             .prompt([
                 {
                     type: "input",
@@ -86,7 +86,7 @@ function createTeam() {
             })
     }
     function addEngineer() {
-       return inquirer
+        return inquirer
             .prompt([
                 {
                     type: "input",
@@ -119,12 +119,12 @@ function createTeam() {
 
                 teamMembers.push(engineer)
 
-                 createTeam();
+                createTeam();
 
             })
     }
     function addIntern() {
-       return inquirer
+        return inquirer
             .prompt([
                 {
                     type: "input",
@@ -157,25 +157,25 @@ function createTeam() {
 
                 teamMembers.push(intern)
 
-                 createTeam();
+                createTeam();
 
             })
-        }
     }
-   
-    createTeam()
-    // .then(() => {
+}
 
-    function renderTeam(){
-        console.log(teamMembers);
-        let html = render(teamMembers);
-        fs.writeFile("team.html", html, 'utf8', () => {
-          console.log("Finished")
-        });
-    }  
+createTeam()
+// .then(() => {
 
-    module.exports = teamMembers
-    
+function renderTeam() {
+    console.log(teamMembers);
+    let html = render(teamMembers);
+    fs.writeFile("./output/team.html", html, 'utf8', () => {
+        console.log("Finished")
+    });
+}
+
+module.exports = teamMembers
+
 
 
 // After the user has input all employees desired, call the `render` function (required
