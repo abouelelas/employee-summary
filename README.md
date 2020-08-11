@@ -21,9 +21,9 @@ How do you deliver this? Here are some guidelines:
 
 * Below is an example of what the application looks like. 
 
-![Employee Summary 1](/assets/employee ss.png)
-![Employee Summary 2](/assets/Employee Summary SS2.png)
-![Employee Summary 3](/assets/Employee Summary SS test run.png)
+* [Employee Summary 1)[./assets/employee ss.png]
+* [Employee Summary 2](./assets/Employee Summary SS2.png)
+* [Employee Summary 3](./assets/Employee Summary SS test run.png)
 
 
 The project will prompt the user to build an engineering team. An engineering
@@ -41,8 +41,8 @@ The project must generate a `team.html` page in the `output` directory, that dis
   * Role-specific property (School, link to GitHub profile, or office number)
 
 Videos of the application's functionality:
-(Employee Summary Video)[https://drive.google.com/file/d/1ZGV4P8pJGxTI9R6E2tyrxCpojU9ScrYI/view]
-(Test run)[https://drive.google.com/file/d/1gONsGJkS6ndf-yYOdu8asTX6G879bvsy/view]
+* (Employee Summary Video)[https://drive.google.com/file/d/1ZGV4P8pJGxTI9R6E2tyrxCpojU9ScrYI/view]
+* (Test run)[https://drive.google.com/file/d/1gONsGJkS6ndf-yYOdu8asTX6G879bvsy/view]
 
 Links to GitHub:
 (Employee Summary)[]
